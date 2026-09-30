@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prasutagus — field-built security tools</title>
+<meta name="description" content="Prasutagus builds open-source security and field tools for tablets and microcontrollers — including Andraste, an Iceni-themed cyberdeck toolkit for the Amazon Fire tablet and ESP32 boards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3F5F7; --paper-2:#E9ECF0; --graphite:#171B21; --graphite-2:#242A33;
+  --ink:#1B2028; --ink-soft:#4A5361; --line:#D5DBE2;
+  --gold:#8C6210; --gold-soft:#B8842A; --link:#1F4F8A;
+  --serif:"Literata",Georgia,serif; --sans:"Geist",system-ui,sans-serif; --mono:"Geist Mono",ui-monospace,monospace;
+  --maxw:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{font-family:var(--serif);line-height:1.15;color:var(--graphite);font-weight:700}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono)}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(243,245,247,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:700;font-size:1.15rem;color:var(--graphite)}
+.brand .mk{width:26px;height:26px;flex:0 0 26px}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--ink-soft);font-size:.92rem;font-weight:500}
+.nav-links a:hover{color:var(--graphite);text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-weight:500;font-size:.92rem;padding:10px 18px;border-radius:8px;border:1px solid transparent;cursor:pointer;transition:.15s}
+.btn-primary{background:var(--graphite);color:#fff}
+.btn-primary:hover{background:var(--graphite-2);text-decoration:none}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--graphite)}
+.btn-ghost:hover{border-color:var(--graphite);text-decoration:none}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:var(--gold-soft);text-decoration:none}
+@media(max-width:720px){.nav-links a:not(.btn){display:none}}
+
+/* hero */
+.hero{padding:88px 0 72px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(2.3rem,5.5vw,3.6rem);letter-spacing:-.01em}
+.hero p.lede{font-family:var(--serif);font-size:clamp(1.05rem,2.2vw,1.35rem);color:var(--ink-soft);max-width:44ch;margin:20px 0 8px}
+.hero .sub{color:var(--ink-soft);max-width:52ch;margin-top:14px}
+.hero-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:40px}
+.tag{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:#fff}
+
+/* sections */
+section{padding:72px 0}
+.section-head{max-width:60ch;margin-bottom:40px}
+.section-head h2{font-size:clamp(1.7rem,3.5vw,2.3rem);margin-top:10px}
+.section-head p{color:var(--ink-soft);margin-top:14px}
+.band{background:var(--graphite);color:#E7EAEE}
+.band h2,.band h3{color:#fff}
+.band .eyebrow{color:var(--gold-soft)}
+.band p{color:#AEB6C0}
+.band a{color:#8FB4E4}
+
+/* product split */
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+@media(max-width:820px){.split{grid-template-columns:1fr;gap:32px}}
+.shots{display:flex;gap:14px;justify-content:center}
+.shots img{width:32%;max-width:190px;border-radius:14px;border:1px solid rgba(255,255,255,.12);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.feature-list{list-style:none;margin-top:22px;display:grid;gap:12px}
+.feature-list li{padding-left:26px;position:relative;color:#C3CAD3}
+.feature-list li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;background:var(--gold-soft);border-radius:2px;transform:rotate(45deg)}
+.count{font-family:var(--serif);font-weight:700;color:var(--gold-soft)}
+
+/* category grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px}
+.card h3{font-size:1.05rem}
+.card .n{font-family:var(--mono);font-size:.72rem;color:var(--gold);letter-spacing:.06em}
+.card p{color:var(--ink-soft);font-size:.9rem;margin-top:6px}
+
+/* download cards */
+.dl-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:720px){.dl-grid{grid-template-columns:1fr}}
+.dl{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column}
+.dl h3{font-size:1.25rem}
+.dl .meta{font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);margin:6px 0 14px}
+.dl p{color:var(--ink-soft);font-size:.94rem;flex:1}
+.dl .row{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+
+/* guides */
+.guides{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.guide{border:1px solid var(--line);border-radius:12px;padding:22px;background:#fff}
+.guide .soon{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:3px 9px;display:inline-block;margin-bottom:12px}
+
+/* hardware */
+.hw{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.hw .item{border:1px solid var(--line);border-radius:12px;padding:20px;background:#fff}
+.hw .item .k{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft)}
+.hw .item h3{font-size:1.02rem;margin:6px 0 8px}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:48px}
+@media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+.callout{border-left:3px solid var(--gold);padding:6px 0 6px 20px;font-family:var(--serif);font-size:1.1rem;color:var(--ink)}
+.ethos{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:22px}
+.ethos h3{font-size:1.05rem}
+.ethos p{font-size:.9rem;color:var(--ink-soft);margin-top:8px}
+
+footer{background:var(--graphite);color:#AEB6C0;padding:48px 0 40px;border-top:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot a{color:#8FB4E4}
+.foot .cols{display:flex;gap:48px;flex-wrap:wrap}
+.foot h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#7A828D;margin-bottom:12px}
+.foot ul{list-style:none;display:grid;gap:8px;font-size:.9rem}
+.fineprint{margin-top:36px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:.8rem;color:#6E7682;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <svg class="mk" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="14.5" y="4" width="3" height="18" fill="#8C6210"/>
+        <path d="M16 1.5 L18 5 L14 5 Z" fill="#8C6210"/>
+        <rect x="9" y="20" width="14" height="2.6" fill="#8C6210"/>
+        <circle cx="16" cy="27" r="3.2" fill="none" stroke="#8C6210" stroke-width="2"/>
+      </svg>
+      Prasutagus
+    </a>
+    <nav class="nav-links">
+      <a href="#andraste">Andraste</a>
+      <a href="#downloads">Downloads</a>
+      <a href="#tools">Tools</a>
+      <a href="#guides">Guides</a>
+      <a href="#about">About</a>
+      <a class="btn btn-ghost" href="https://github.com/stevenjtobin" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Iceni field tools · open source</span>
+    <h1>Security tools, built in the field.</h1>
+    <p class="lede">Prasutagus makes open-source recon, detection and field tools for the hardware you already carry — a tablet, a microcontroller, a cyberdeck.</p>
+    <p class="sub">Named for the Iceni. Built defensively: detectors and scanners, not attack emitters — run on the networks you own or are authorised to test.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#downloads">Download Andraste</a>
+      <a class="btn btn-ghost" href="#andraste">See what it does</a>
+    </div>
+    <div class="tags">
+      <span class="tag">WiFi</span><span class="tag">Bluetooth LE</span><span class="tag">Network</span>
+      <span class="tag">Location</span><span class="tag">Camera</span><span class="tag">SDR-ready</span>
+      <span class="tag">Termux bridge</span><span class="tag">OTA updates</span>
+    </div>
+  </div>
+</section>
+
+<!-- ANDRASTE TABLET -->
+<section id="andraste" class="band">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="eyebrow">Andraste · Tablet Edition</span>
+        <h2>An 84-tool cyberdeck on an Amazon Fire tablet.</h2>
+        <p>Andraste turns an ordinary Fire HD 8 into a field toolkit: an app-launcher of security and utility tools organised by category, in one native, offline app. No Google services required.</p>
+        <ul class="feature-list">
+          <li><span class="count">84</span> tools running natively on the tablet's own radios, camera and sensors</li>
+          <li>Live WiFi &amp; Bluetooth LE scanning, network recon, GPS, QR, file tools</li>
+          <li>A Termux bridge to the Linux security toolchain</li>
+          <li>In-app updates over WiFi — no cable needed</li>
+          <li>Open source, AGPL-3.0</li>
+        </ul>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#downloads">Get the APK</a>
+          <a class="btn btn-ghost" href="https://github.com/stevenjtobin/andraste-fire" target="_blank" rel="noopener" style="color:#fff;border-color:rgba(255,255,255,.25)">View source</a>
+        </div>
+      </div>
+      <div class="shots">
+        <img src="assets/andraste-home.png" alt="Andraste home launcher">
+        <img src="assets/andraste-wifi.png" alt="Andraste WiFi scanner">
+        <img src="assets/andraste-devinfo.png" alt="Andraste device info">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOADS -->
+<section id="downloads">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Downloads</span>
+      <h2>Free, and updated over the air.</h2>
+      <p>Everything here is a free download. The tablet app updates itself over WiFi once installed; the board firmware flashes over USB and pulls OTA updates after.</p>
+    </div>
+    <div class="dl-grid">
+      <div class="dl">
+        <h3>Andraste — Tablet Edition</h3>
+        <div class="meta">v0.2.0 · Amazon Fire HD 8 (onyx) · armeabi-v7a · Android 9+</div>
+        <p>The 84-tool app. Sideload the APK, then it self-updates over WiFi from inside the app (System → OTA Update).</p>
+        <div class="row">
+          <a class="btn btn-primary" href="https://github.com/stevenjtobin/andraste-ota/releases/latest" target="_blank" rel="noopener">Download APK</a>
+          <a class="btn btn-ghost" href="https://github.com/stevenjtobin/andraste-fire" target="_blank" rel="noopener">Source &amp; docs</a>
+        </div>
+      </div>
+      <div class="dl">
+        <h3>Andraste — CYD / ESP32 firmware</h3>
+        <div class="meta">The original cyberdeck · ESP32 "Cheap Yellow Display" · OTA-updated</div>
+        <p>The microcontroller version that started it all — a self-contained handheld build that pulls over-the-air updates once flashed.</p>
+        <div class="row">
+          <a class="btn btn-primary" href="https://github.com/stevenjtobin/andraste-ota/releases" target="_blank" rel="noopener">Firmware releases</a>
+          <a class="btn btn-ghost" href="#guides">Flashing guide</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools" style="background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What's inside</span>
+      <h2>Eleven categories, one launcher.</h2>
+      <p>Tools are grouped and badged by risk — passive scanners and detectors by default, with active tooling clearly marked and gated to your own authorised targets.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="n">26 tools</div><h3>WiFi</h3><p>Scanner, evil-twin &amp; WPS detectors, channel analyser, signal meter, wardrive/WiGLE export.</p></div>
+      <div class="card"><div class="n">15 tools</div><h3>Bluetooth LE</h3><p>Scanner, beacon decoder, tracker hunter, GATT explorer, skimmer &amp; spam detectors, Find-My observer.</p></div>
+      <div class="card"><div class="n">25 tools</div><h3>Network</h3><p>Port &amp; LAN recon, service discovery, DNS, HTTP probe, MQTT, SSH, bandwidth test, printer discovery.</p></div>
+      <div class="card"><div class="n">5 tools</div><h3>Location</h3><p>Live GPS, GPX track recorder, GNSS sky view, wardrive logging.</p></div>
+      <div class="card"><div class="n">5 tools</div><h3>Camera</h3><p>QR / barcode, EXIF inspector, surveillance-camera hunter, drone Remote-ID monitor.</p></div>
+      <div class="card"><div class="n">7 tools</div><h3>Files</h3><p>Browser, hashing, hex / log / PCAP viewers, export &amp; share.</p></div>
+      <div class="card"><div class="n">22 tools</div><h3>Terminal</h3><p>A bridge to the Linux security toolchain via Termux, launched by preset.</p></div>
+      <div class="card"><div class="n">9 tools</div><h3>SDR-ready</h3><p>ADS-B, AIS, weather-sat, rtl_433 and more — for when you add an RTL-SDR dongle.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDES -->
+<section id="guides">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Guides &amp; tutorials</span>
+      <h2>Build it yourself.</h2>
+      <p>Write-ups and videos on building, flashing and using the tools — and the story behind them.</p>
+    </div>
+    <div class="guides">
+      <div class="guide"><span class="soon">Coming soon</span><h3>Sideloading Andraste onto a Fire tablet</h3><p>From developer mode to first launch, step by step.</p></div>
+      <div class="guide"><span class="soon">Coming soon</span><h3>Setting up the Termux toolchain</h3><p>Install the Linux security tools the terminal category drives.</p></div>
+      <div class="guide"><span class="soon">Coming soon</span><h3>Flashing the ESP32 cyberdeck</h3><p>Building the original Andraste on a Cheap Yellow Display board.</p></div>
+      <div class="guide"><span class="soon">Coming soon</span><h3>Adding monitor-mode WiFi</h3><p>Root and kernel, or the easy USB-OTG adapter route.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HARDWARE -->
+<section style="background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The kit</span>
+      <h2>Hardware I actually use.</h2>
+      <p>The boards and add-ons these builds run on. Links go to the exact hardware; some may be affiliate links that support the project at no cost to you.</p>
+    </div>
+    <div class="hw">
+      <div class="item"><div class="k">Tablet</div><h3>Amazon Fire HD 8</h3><p style="color:var(--ink-soft);font-size:.9rem">The Andraste Tablet host. Cheap, capable, sideload-friendly.</p><a href="#" rel="sponsored nofollow">View hardware →</a></div>
+      <div class="item"><div class="k">Board</div><h3>ESP32 "Cheap Yellow Display"</h3><p style="color:var(--ink-soft);font-size:.9rem">The original cyberdeck — ESP32 with a built-in touchscreen.</p><a href="#" rel="sponsored nofollow">View hardware →</a></div>
+      <div class="item"><div class="k">Add-on</div><h3>RTL-SDR USB dongle</h3><p style="color:var(--ink-soft);font-size:.9rem">Unlocks the SDR category — ADS-B, AIS, weather-sat, 433 MHz.</p><a href="#" rel="sponsored nofollow">View hardware →</a></div>
+      <div class="item"><div class="k">Add-on</div><h3>USB-OTG WiFi adapter</h3><p style="color:var(--ink-soft);font-size:.9rem">A monitor-mode adapter for the advanced WiFi tooling.</p><a href="#" rel="sponsored nofollow">View hardware →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">About</span>
+      <h2>Why Prasutagus, why the Iceni.</h2>
+      <p style="color:var(--ink-soft);margin-top:14px">Prasutagus was king of the Iceni, the Norfolk tribe whose revolt under Boudica shook Roman Britain in 60 AD. The name carries a local, defiant, build-your-own spirit — which is exactly how these tools are made: our own code, our own way, for people who'd rather understand their kit than rent it.</p>
+      <p style="color:var(--ink-soft);margin-top:14px">Everything here is open source and free to download. It's built and maintained in Norfolk, England, as a working portfolio across security engineering and applied AI.</p>
+      <div class="callout" style="margin-top:26px">Detectors, not emitters. Learn the terrain before you touch it.</div>
+    </div>
+    <div class="ethos">
+      <h3>Responsible-use</h3>
+      <p>The tools default to passive and defensive: scanners, detectors, and read-only recon. Active and offensive tooling is clearly badged and meant only for networks and devices you own or are explicitly authorised to test.</p>
+      <p>Licensed AGPL-3.0. Use it, learn from it, build on it.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="brand" style="color:#fff">Prasutagus</div>
+      <p style="max-width:32ch;margin-top:12px;font-size:.9rem">Open-source field security tools. Built in Norfolk.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h4>Project</h4>
+        <ul>
+          <li><a href="#andraste">Andraste Tablet</a></li>
+          <li><a href="#downloads">Downloads</a></li>
+          <li><a href="#tools">Tools</a></li>
+          <li><a href="#guides">Guides</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Code</h4>
+        <ul>
+          <li><a href="https://github.com/stevenjtobin/andraste-fire" target="_blank" rel="noopener">andraste-fire</a></li>
+          <li><a href="https://github.com/stevenjtobin/andraste-ota" target="_blank" rel="noopener">Releases / OTA</a></li>
+          <li><a href="https://github.com/stevenjtobin" target="_blank" rel="noopener">All repos</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="wrap fineprint">
+    <span>© 2026 Prasutagus · AGPL-3.0</span>
+    <span class="mono">For Norfolk. For the Iceni.</span>
+  </div>
+</footer>
+
+</body>
+</html>
