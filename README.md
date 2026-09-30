@@ -1,21 +1,26 @@
-# prasutagus-site
+# icenitech-site
 
-The public website for Prasutagus — https://prasutagus.com
+The website for **IceniTech** — https://icenitech.com — the shopfront and portfolio
+for Andraste (the field security toolkit for tablets and ESP32 boards).
 
-Static site (no build step). The served directory is `dist/`.
+Static site, no build step. Served directory is `dist/`.
 
-## Deploy (on the Contabo VPS)
-nginx serves `prasutagus.com` from `/var/www/prasutagus/dist`. To update:
+## Hosting (Contabo VPS, host alias `contabo`)
+nginx serves `icenitech.com` as static files from `/var/www/icenitech/dist`.
+(Previously this domain proxied the retired `etsyscope` app on :8082.)
 
+To update:
 ```bash
-cd /var/www/prasutagus
-# first time:  git clone https://github.com/stevenjtobin/prasutagus-site .
-git pull
-# nginx already points at /var/www/prasutagus/dist — no reload needed for static files
+# from this repo, on a machine with SSH to the VPS:
+scp -r dist/* contabo:/var/www/icenitech/dist/
+# static files — no nginx reload needed
 ```
 
+The vhost is dev IP-locked (allow-list + deny all). To go public, remove the
+`allow`/`deny` lines in /etc/nginx/sites-available/icenitech.com and reload nginx.
+
 ## Structure
-- `dist/index.html` — the landing page (inline CSS, Google Fonts: Literata + Geist)
-- `dist/assets/` — screenshots and images
+- `dist/index.html` — landing page (inline CSS; Google Fonts: Literata + Geist)
+- `dist/assets/` — screenshots
 
 House style: cool-grey paper #F3F5F7, graphite #171B21, torc-gold #8C6210, link #1F4F8A.
