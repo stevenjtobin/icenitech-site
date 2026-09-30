@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andraste Tablet — full guide</title>
+<meta name="description" content="Full guide to Andraste Tablet Edition: install, permissions, OTA updates, and a manual for every tool.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body><header class="nav"><div class="wrap nav-in">
+<a class="brand" href="../index.html"><svg class="mk" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="14.5" y="4" width="3" height="18" fill="#B07A1E"/><path d="M16 1.5 L18 5 L14 5 Z" fill="#B07A1E"/><rect x="9" y="20" width="14" height="2.6" fill="#B07A1E"/><circle cx="16" cy="27" r="3.2" fill="none" stroke="#2E7D74" stroke-width="2"/></svg> IceniTech</a>
+<nav class="nav-links" id="navlinks"><a href="../index.html" class="">Home</a><a href="../software/index.html" class="active">Software</a><a href="../tools/index.html" class="">Tools</a><a href="../videos/index.html" class="">Videos</a><a href="../about.html" class="">About</a><a href="../community.html" class="">Community</a></nav>
+<div class="nav-right"><div class="socials"><a href="#" target="_blank" rel="noopener me" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.9-.5-5.8a3 3 0 0 0-2.1-2.1C18.5 3.5 12 3.5 12 3.5s-6.5 0-8.4.6A3 3 0 0 0 1.5 6.2C1 8.1 1 12 1 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 8.4.6 8.4.6s6.5 0 8.4-.6a3 3 0 0 0 2.1-2.1C23 15.9 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="Discord" title="Discord"><svg viewBox="0 0 24 24"><path d="M20 4.4A19 19 0 0 0 15.3 3l-.2.5a14 14 0 0 1 4 2 16 16 0 0 0-14 0 14 14 0 0 1 4-2L8.7 3A19 19 0 0 0 4 4.4 20 20 0 0 0 .5 18a19 19 0 0 0 5.8 3l.8-1.3a12 12 0 0 1-2-1l.5-.4a13 13 0 0 0 11 0l.5.4a12 12 0 0 1-2 1l.8 1.3a19 19 0 0 0 5.8-3A20 20 0 0 0 20 4.4zM8.5 14.5c-1 0-1.8-1-1.8-2.1S7.5 10.3 8.5 10.3s1.8 1 1.8 2.1-.8 2.1-1.8 2.1zm7 0c-1 0-1.8-1-1.8-2.1s.8-2.1 1.8-2.1 1.8 1 1.8 2.1-.8 2.1-1.8 2.1z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4.1.6c-.8.3-1.4.7-2 1.4-.7.6-1.1 1.2-1.4 2C.3 4.8.1 5.7.1 7 0 8.3 0 8.7 0 12s0 3.7.1 5c0 1.3.2 2.2.5 2.9.3.8.7 1.4 1.4 2 .6.7 1.2 1.1 2 1.4.7.3 1.6.5 2.9.5 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3 0 2.2-.2 2.9-.5.8-.3 1.4-.7 2-1.4.7-.6 1.1-1.2 1.4-2 .3-.7.5-1.6.5-2.9.1-1.3.1-1.7.1-5s0-3.7-.1-5c0-1.3-.2-2.2-.5-2.9-.3-.8-.7-1.4-1.4-2-.6-.7-1.2-1.1-2-1.4C19.2.3 18.3.1 17 .1 15.7 0 15.3 0 12 0zm0 5.8A6.2 6.2 0 1 0 18.2 12 6.2 6.2 0 0 0 12 5.8zm0 10.2A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.9a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24"><path d="M16.5 2h-3v13a2.5 2.5 0 1 1-2.5-2.5c.2 0 .4 0 .5.1V9.5a5.6 5.6 0 0 0-.5 0A5.5 5.5 0 1 0 16.5 15V8.3a7 7 0 0 0 4 1.3V6.5a4 4 0 0 1-4-4z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="X" title="X"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.9l-5.4-7-6.2 7H1.6l8.2-9.3L1 2h7.1l4.9 6.5L18.9 2zm-1.2 18h1.9L7.2 4H5.2l12.5 16z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7v-3.5h3.1V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9v2.2h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg></a></div>
+<button class="nav-toggle" onclick="document.getElementById('navlinks').classList.toggle('open')" aria-label="Menu"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
+</div></header>
+<section class="hero"><div class="wrap doc">
+<div class="breadcrumb"><a href="index.html">Software</a> / Andraste — Tablet Edition</div>
+<span class="eyebrow">Software guide</span>
+<h1>Andraste — Tablet Edition</h1>
+<p class="sub">130 tools in one native app for the Amazon Fire HD 8 — 84 working today, the rest ready as you add hardware or root. Free, open source, updates over Wi-Fi.</p>
+<div class="hero-cta">
+<a class="btn btn-primary" href="https://github.com/stevenjtobin/andraste-ota/releases/latest" target="_blank" rel="noopener">Download APK</a>
+<a class="btn btn-ghost" href="https://github.com/stevenjtobin/andraste-fire" target="_blank" rel="noopener">Source</a></div>
+</div></section>
+<section><div class="wrap doc">
+<h2>What it is</h2>
+<p>Andraste is an app-launcher of field tools, grouped by category. It runs natively on the tablet's own radios, camera and sensors — no Google services needed — and bridges to the Linux security toolchain through Termux. Tools are badged by risk so you always know what a tool does before you run it.</p>
+<h2>Getting started</h2>
+<ol>
+<li><strong>Turn on developer options</strong> on the Fire tablet and enable installing apps over USB (or from unknown sources).</li>
+<li><strong>Install the APK</strong> — grab it from the <a href="https://github.com/stevenjtobin/andraste-ota/releases/latest" target="_blank" rel="noopener">latest release</a> and open it to install.</li>
+<li><strong>Grant permissions</strong> (Location, Camera, etc.) from the Permissions screen — Android needs Location switched on for Wi-Fi and Bluetooth scanning.</li>
+<li><strong>Update over the air</strong> from <em>System → OTA Update</em> — no cable needed after the first install.</li>
+</ol>
+<div class="callout"><strong>New here?</strong> Every tool below has a plain-English manual — tap <em>Manual →</em> to see what it does, how to use it, and what to expect on your hardware.</div>
+<h2>The tools</h2>
+<p class="muted">Grouped by category. Badges: <span class="badge passive">Passive</span> read-only · <span class="badge active">Active</span> touches the target · <span class="badge offensive">Advanced</span> authorised use only · <span class="badge">Ready</span> working today.</p>
+<div class="toolcat"><h3>Wi-Fi <span class="cnt">26 tools</span></h3><p class="muted" style="margin:-6px 0 8px">Discover and analyse the wireless networks around you.</p><div class="toolrow"><div class="tx">
+<div class="nm">WiFi Scanner</div><div class="ds">Passive scan — all nearby APs, BSSID, RSSI, security</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.scan.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">WiFi Monitor</div><div class="ds">Promiscuous 802.11 frame monitor (root + monitor-mode adapter)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">Root</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.monitor.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Deauth Detector</div><div class="ds">Detect deauthentication / disassociation attack frames (passive)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">Root</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.deauth_det.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Packet Sniffer</div><div class="ds">Capture 802.11 frames to PCAP (root + monitor-mode adapter)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">Root</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.sniffer.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Probe Harvester</div><div class="ds">Capture probe-request frames from nearby devices</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">Root</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.probe.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Evil Twin Detector</div><div class="ds">Detect rogue APs cloning known SSIDs</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.eviltwin.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Wardriving</div><div class="ds">GPS-tagged WiFi scan log — exports to CSV / WiGLE format</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.wardrive.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">WiFi Connect</div><div class="ds">Scan, pick, and connect to a network with saved credentials</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.connect.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">AP Info</div><div class="ds">Deep info on a selected AP — country, capabilities, beacon interval</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.apinfo.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Hidden SSID Finder</div><div class="ds">Probe for hidden SSIDs by sending directed probe-request frames</div>
+<div class="badges"><span class="badge passive">Passive</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.hidden.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">WPA Handshake Capture</div><div class="ds">Capture WPA 4-way handshakes (monitor-mode adapter required)</div>
+<div class="badges"><span class="badge active">Active</span> <span class="badge">Root</span> <span class="badge">monitor-mode USB WiFi adapter</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.wpa_cap.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">PMKID Capture</div><div class="ds">Capture PMKID from AP without full handshake (monitor-mode)</div>
+<div class="badges"><span class="badge active">Active</span> <span class="badge">Root</span> <span class="badge">monitor-mode USB WiFi adapter</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.pmkid.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">WPA Crack (Termux)</div><div class="ds">Launch hashcat / aircrack-ng on captured handshakes via Termux</div>
+<div class="badges"><span class="badge active">Active</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.wpa_crack.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">WiGLE Upload</div><div class="ds">Upload wardrive CSV to WiGLE.net</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.wigle.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">KARMA Detector</div><div class="ds">Detect KARMA / auto-association attack responses</div>
+<div class="badges"><span class="badge passive">Passive</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.karma.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Beacon Spam Detector</div><div class="ds">Detect beacon flooding / SSID spray attacks</div>
+<div class="badges"><span class="badge passive">Passive</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.beacon_det.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Flood Detector</div><div class="ds">Detect high-rate 802.11 flooding on current channel</div>
+<div class="badges"><span class="badge passive">Passive</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.flood_det.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Jam Detector</div><div class="ds">Detect RF interference and WiFi channel jamming signatures</div>
+<div class="badges"><span class="badge passive">Passive</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.jam_det.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">WiFi Dead Drop</div><div class="ds">Covert data exchange via custom beacon IEs</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">Root</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.dead_drop.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Client in Wild</div><div class="ds">Find devices probing for specific SSIDs (CIW scanner)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">Root</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.ciw.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">WiFi Stations</div><div class="ds">Enumerate clients connected to a given AP</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">Root</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.stations.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">WPS Scanner</div><div class="ds">Find WPS-enabled APs and check for known-weak PINs</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.wps.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Traffic Stats</div><div class="ds">Per-SSID frame counts and channel utilisation</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.traffic.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Channel Analyser</div><div class="ds">2.4GHz channel overlap and congestion map</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.channel.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Signal Meter</div><div class="ds">Live RSSI bar for a selected AP — walk-test tool</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.sig_meter.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Web UI Server</div><div class="ds">Serve Andraste tool results via local HTTP</div>
+<div class="badges"><span class="badge passive">Passive</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/wifi.webui.html">Manual →</a></div></div></div><div class="toolcat"><h3>Bluetooth <span class="cnt">15 tools</span></h3><p class="muted" style="margin:-6px 0 8px">Find and inspect nearby Bluetooth Low Energy devices.</p><div class="toolrow"><div class="tx">
+<div class="nm">BLE Scanner</div><div class="ds">Scan all nearby Bluetooth LE devices</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/ble.scan.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Beacon Decoder</div><div class="ds">Decode iBeacon, Eddystone, Continuity, Exposure Notification</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/ble.beacon.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Tracker Hunter</div><div class="ds">Detect AirTag, Tile, Samsung SmartTag, Chipolo, Flipper, Google</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/ble.tracker.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">BLE Finder</div><div class="ds">Live RSSI meter — locate a selected BLE device</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/ble.finder.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">BLE Logger</div><div class="ds">Log all seen BLE devices to CSV with timestamps</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/ble.logger.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">GATT Explorer</div><div class="ds">Connect to a BLE device and browse services / characteristics</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/ble.gatt.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Skimmer Detector</div><div class="ds">Detect Bluetooth card skimmer signatures by name / UUID patterns</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/ble.skimmer.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Flipper Detector</div><div class="ds">Detect active Flipper Zero devices by BLE advertisement</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/ble.flipper.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">BLE Spam Detector</div><div class="ds">Detect Apple / Android / Windows BLE spam and crash attacks</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/ble.spam_det.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Sour Apple Watch</div><div class="ds">Detect Sour Apple BLE crash advertisement targeting iPhones</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/ble.sour_apple.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Clone Detector</div><div class="ds">Flag identical MAC + appearance on multiple devices</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/ble.clone_det.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Find My Observer</div><div class="ds">Observe Apple Find My network tag advertisements</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/ble.findmy.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Classic BT Scanner</div><div class="ds">Discover classic Bluetooth devices (non-BLE)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/ble.classic.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Force Pair Detector</div><div class="ds">Detect force-pairing attack advertisements</div>
+<div class="badges"><span class="badge passive">Passive</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/ble.force_pair.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">BLE Whisper</div><div class="ds">Covert short-range BLE message exchange</div>
+<div class="badges"><span class="badge passive">Passive</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/ble.whisper.html">Manual →</a></div></div></div><div class="toolcat"><h3>Network <span class="cnt">25 tools</span></h3><p class="muted" style="margin:-6px 0 8px">Map and probe the devices and services on a network.</p><div class="toolrow"><div class="tx">
+<div class="nm">SSH Client</div><div class="ds">Full SSH client with keyboard support — JSch backend</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.ssh_client.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">SSH Server</div><div class="ds">Run an SSH server on the tablet (port 8022)</div>
+<div class="badges"><span class="badge passive">Passive</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.ssh_server.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Telnet Client</div><div class="ds">Telnet / raw TCP terminal session</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.telnet.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">TCP Client</div><div class="ds">Raw TCP client with hex / ASCII output</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.tcp_client.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">TCP Listener</div><div class="ds">Bind a port and capture incoming connections</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.tcp_listen.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Port Scanner</div><div class="ds">TCP connect scan with banner grabbing — native + Termux nmap</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.portscan.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">LAN Recon</div><div class="ds">ARP sweep, hostname resolve, OS fingerprint on local subnet</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.lan_recon.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Net Map</div><div class="ds">Visual network graph of discovered LAN hosts</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.netmap.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Service Discovery</div><div class="ds">mDNS / SSDP / NetBIOS / UPnP service enumeration</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.svc_disc.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">DNS Tools</div><div class="ds">Lookup, reverse, zone transfer, DNS-over-HTTPS test</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.dns.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">DHCP Inspector</div><div class="ds">Capture and decode DHCP offers, detect rogue DHCP</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">Root</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.dhcp.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">ARP Scanner</div><div class="ds">ARP ping sweep and ARP cache dump</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.arp.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">WireGuard VPN</div><div class="ds">WireGuard VPN client with quick-connect profiles</div>
+<div class="badges"><span class="badge passive">Passive</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.wireguard.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">HTTP Probe</div><div class="ds">HTTP/HTTPS request builder, header inspector, redirect tracer</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.http_probe.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">MQTT Inspector</div><div class="ds">Connect to MQTT broker, subscribe topics, decode payloads</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.mqtt.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Net Utils</div><div class="ds">Ping, traceroute, whois, nslookup, curl</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.utils.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">WPAD Detector</div><div class="ds">Detect WPAD / proxy auto-config poisoning on the LAN</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.wpad.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Reverse Shell</div><div class="ds">Catch a reverse shell connection (netcat-style listener)</div>
+<div class="badges"><span class="badge active">Active</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.rev_shell.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Responder (Termux)</div><div class="ds">LLMNR/NBT-NS/mDNS poisoner via Termux</div>
+<div class="badges"><span class="badge active">Active</span> <span class="badge">Root</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.responder.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">NTLM Cracker (Termux)</div><div class="ds">Crack captured NTLMv2 hashes via Termux + hashcat</div>
+<div class="badges"><span class="badge active">Active</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.ntlm_crack.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">UPnP / SSDP Scanner</div><div class="ds">Enumerate UPnP devices and services on the LAN</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.upnp.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Printer Discovery</div><div class="ds">Find network printers via mDNS / IPP / LPD</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.printer.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Bandwidth Test</div><div class="ds">Throughput test to a remote host or local iperf3 server</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.bw_test.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Traffic Monitor</div><div class="ds">Monitor per-app network usage and connections</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">Root</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.sniff_pass.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">DHCP Starv Detector</div><div class="ds">Detect DHCP starvation attacks on local subnet</div>
+<div class="badges"><span class="badge passive">Passive</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/net.dhcp_starv.html">Manual →</a></div></div></div><div class="toolcat"><h3>Location <span class="cnt">5 tools</span></h3><p class="muted" style="margin:-6px 0 8px">Position, satellites and location logging.</p><div class="toolrow"><div class="tx">
+<div class="nm">GPS Display</div><div class="ds">Live fix: lat/lon, altitude, speed, satellites in view</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/gps.display.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">GPS Track</div><div class="ds">Record a GPS track to GPX file</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/gps.track.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Wardriving</div><div class="ds">GPS + WiFi simultaneous logging (linked from WiFi category)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/gps.wardrive.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">WiGLE Upload</div><div class="ds">Send accumulated wardrive data to WiGLE.net</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/gps.wigle.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Satellite Tracker</div><div class="ds">SGP4 orbital predictions for ISS, weather and amateur sats</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/gps.sat_track.html">Manual →</a></div></div></div><div class="toolcat"><h3>Camera <span class="cnt">5 tools</span></h3><p class="muted" style="margin:-6px 0 8px">Use the camera for scanning and inspection.</p><div class="toolrow"><div class="tx">
+<div class="nm">QR / Barcode</div><div class="ds">Decode QR codes and 1D barcodes via camera (ZXing)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/cam.qr.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Surveillance Hunter</div><div class="ds">Detect known camera OUIs / SSIDs (Hikvision, Dahua, Reolink…)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/cam.surv.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Drone RID</div><div class="ds">Decode FAA/CAA Remote ID broadcasts (WiFi Broadcast + BLE)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/cam.drone_rid.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">OCR Reader</div><div class="ds">Extract text from images using ML Kit / Tesseract</div>
+<div class="badges"><span class="badge passive">Passive</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/cam.ocr.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">EXIF Inspector</div><div class="ds">Read EXIF metadata from photos (GPS, device, timestamp)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/cam.exif.html">Manual →</a></div></div></div><div class="toolcat"><h3>Radio (SDR) <span class="cnt">9 tools</span></h3><p class="muted" style="margin:-6px 0 8px">Receive and decode radio signals with an SDR dongle.</p><div class="toolrow"><div class="tx">
+<div class="nm">RTL-SDR Scanner</div><div class="ds">Wideband spectrum scan via RTL-SDR USB dongle + Termux</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">RTL-SDR USB dongle</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/sdr.scan.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">FM Radio</div><div class="ds">FM broadcast reception (rtl_fm via Termux)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">RTL-SDR USB dongle</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/sdr.fm.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">ADS-B Receiver</div><div class="ds">Live aircraft tracking (dump1090 via Termux)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">RTL-SDR USB dongle</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/sdr.adsb.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">AIS Decoder</div><div class="ds">Ship tracking from 162MHz AIS signals</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">RTL-SDR USB dongle</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/sdr.ais.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Weather Satellite</div><div class="ds">NOAA APT / Meteor-M image reception</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">RTL-SDR USB dongle</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/sdr.wx_sat.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">rtl_433 IoT Sensors</div><div class="ds">Decode 433MHz IoT sensors, meters, remotes</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">RTL-SDR USB dongle</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/sdr.rtl433.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">ACARS Decoder</div><div class="ds">Decode ACARS aircraft comms on 131.5MHz</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">RTL-SDR USB dongle</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/sdr.acars.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Spectrum Analyser</div><div class="ds">Live spectrum waterfall display</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">RTL-SDR USB dongle</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/sdr.spectrum.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">LoRa Monitor</div><div class="ds">Decode LoRa / LoRaWAN packets</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">USB LoRa adapter (OTG)</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/sdr.lora.html">Manual →</a></div></div></div><div class="toolcat"><h3>NFC <span class="cnt">7 tools</span></h3><p class="muted" style="margin:-6px 0 8px">Read and work with NFC tags and cards.</p><div class="toolrow"><div class="tx">
+<div class="nm">NFC Read</div><div class="ds">Read NFC tag — NDEF, MIFARE, NTAG</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">NFC hardware (not present)</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/nfc.read.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">MIFARE Dump</div><div class="ds">Dump all 64 sectors of a MIFARE Classic card</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">NFC hardware</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/nfc.dump.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">NFC Write</div><div class="ds">Write NDEF record to a blank tag</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">NFC hardware</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/nfc.write.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Magic UID</div><div class="ds">Clone UID to a MIFARE Magic (gen1/gen2) card</div>
+<div class="badges"><span class="badge active">Active</span> <span class="badge">NFC hardware</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/nfc.magic_uid.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Amiibo Clone</div><div class="ds">Read and write Amiibo NTAG215 figures</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">NFC hardware</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/nfc.amiibo.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">RFID 125kHz</div><div class="ds">Read 125kHz EM4100 / HID proximity cards</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">USB RFID reader (OTG)</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/nfc.rfid_125.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">NFC Toolkit</div><div class="ds">Fuzzer, raw APDU sender, NDEF inspector</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">NFC hardware</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/nfc.toolkit.html">Manual →</a></div></div></div><div class="toolcat"><h3>Terminal <span class="cnt">22 tools</span></h3><p class="muted" style="margin:-6px 0 8px">Run the Linux security toolchain through Termux.</p><div class="toolrow"><div class="tx">
+<div class="nm">Termux Terminal</div><div class="ds">Full Termux shell — run any Linux security tool</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.terminal.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Nmap</div><div class="ds">Network mapper — host discovery, port scan, OS detection</div>
+<div class="badges"><span class="badge active">Active</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.nmap.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Masscan</div><div class="ds">Ultra-fast port scanner (Masscan via Termux)</div>
+<div class="badges"><span class="badge active">Active</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.masscan.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Aircrack-ng</div><div class="ds">WPA/WEP cracking suite (Termux + root + monitor adapter)</div>
+<div class="badges"><span class="badge active">Active</span> <span class="badge">Root</span> <span class="badge">monitor-mode USB WiFi adapter</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.aircrack.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Hashcat</div><div class="ds">GPU/CPU password cracker (Termux)</div>
+<div class="badges"><span class="badge active">Active</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.hashcat.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Hydra</div><div class="ds">Network login brute-forcer (Termux)</div>
+<div class="badges"><span class="badge active">Active</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.hydra.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">SQLMap</div><div class="ds">Automated SQL injection detection and exploitation (Termux)</div>
+<div class="badges"><span class="badge offensive">Advanced</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.sqlmap.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Metasploit</div><div class="ds">Exploitation framework — msfconsole via Termux</div>
+<div class="badges"><span class="badge offensive">Advanced</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.metasploit.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">John the Ripper</div><div class="ds">Password cracker for many hash formats (Termux)</div>
+<div class="badges"><span class="badge active">Active</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.john.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Nikto</div><div class="ds">Web server vulnerability scanner (Termux)</div>
+<div class="badges"><span class="badge active">Active</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.nikto.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Gobuster / dirb</div><div class="ds">Directory and DNS brute-forcing (Termux)</div>
+<div class="badges"><span class="badge active">Active</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.gobuster.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Netcat</div><div class="ds">Swiss-army TCP/UDP tool (Termux nc)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.netcat.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Socat</div><div class="ds">Advanced relay / port-forward / proxy (Termux)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.socat.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">tcpdump</div><div class="ds">PCAP capture via Termux + root</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge">Root</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.tcpdump.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">PCAP Viewer</div><div class="ds">Native viewer for .pcap files (no Wireshark binary needed)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.wireshark.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">AnonSurf / Tor</div><div class="ds">Route all traffic through Tor (Termux + torsocks)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.anonsurf.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Script Runner</div><div class="ds">Run saved shell / Python scripts from Files</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.scripts.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">enum4linux</div><div class="ds">Enumerate SMB/Samba shares and users (Termux)</div>
+<div class="badges"><span class="badge active">Active</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.enum4linux.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">CrackMapExec</div><div class="ds">SMB / AD network attack and audit tool (Termux)</div>
+<div class="badges"><span class="badge offensive">Advanced</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.crackmapexec.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Evil-WinRM</div><div class="ds">Windows Remote Management shell (Termux)</div>
+<div class="badges"><span class="badge offensive">Advanced</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.evil_winrm.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Impacket Suite</div><div class="ds">Python SMB/Kerberos/NTLM tools (Termux)</div>
+<div class="badges"><span class="badge offensive">Advanced</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.impacket.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">ffuf (fuzzer)</div><div class="ds">Web fuzzer for paths, params, vhosts (Termux)</div>
+<div class="badges"><span class="badge active">Active</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/term.ffuf.html">Manual →</a></div></div></div><div class="toolcat"><h3>Files <span class="cnt">7 tools</span></h3><p class="muted" style="margin:-6px 0 8px">Browse, inspect and share files and captures.</p><div class="toolrow"><div class="tx">
+<div class="nm">File Browser</div><div class="ds">Browse internal storage, SD card, and Andraste data folder</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/files.browse.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">PCAP Viewer</div><div class="ds">Parse and display .pcap capture files</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/files.pcap.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Log Viewer</div><div class="ds">Tail / search Andraste log files and scan results</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/files.log.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Hex Viewer</div><div class="ds">View any file in hex + ASCII (editor coming)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/files.hex.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Hash Calculator</div><div class="ds">MD5 / SHA1 / SHA256 / SHA512 for any file</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/files.hash.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Export / Share</div><div class="ds">Zip and share any capture/log via Android share sheet</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/files.export.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Format SD Card</div><div class="ds">Wipe the microSD card</div>
+<div class="badges"><span class="badge active">Active</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/files.sd_format.html">Manual →</a></div></div></div><div class="toolcat"><h3>Dashboard <span class="cnt">2 tools</span></h3><p class="muted" style="margin:-6px 0 8px">A live overview of your surroundings and your progress.</p><div class="toolrow"><div class="tx">
+<div class="nm">The Rising</div><div class="ds">Iceni rank progression — XP, unlocks, history cards</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/tribe.rising.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Threat Radar</div><div class="ds">Passive multi-spectrum threat overview (BLE + WiFi + RF)</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/tribe.radar.html">Manual →</a></div></div></div><div class="toolcat"><h3>System <span class="cnt">7 tools</span></h3><p class="muted" style="margin:-6px 0 8px">Device info, permissions, updates and settings.</p><div class="toolrow"><div class="tx">
+<div class="nm">Device Info</div><div class="ds">Hardware capabilities, radio state, root status, ADB status</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/sys.devinfo.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Settings</div><div class="ds">Theme, permissions, Termux path, consent gate</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/sys.settings.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Permissions</div><div class="ds">Grant / revoke all required Android permissions</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/sys.perms.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">USB Devices</div><div class="ds">Enumerate OTG USB devices — RTL-SDR, WiFi adapters, etc.</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/sys.usb.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">OTA Update</div><div class="ds">Check for and download Andraste Tablet updates</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/sys.update.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">Power Menu</div><div class="ds">Reboot options and wipe logs</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/sys.power.html">Manual →</a></div></div><div class="toolrow"><div class="tx">
+<div class="nm">About Andraste</div><div class="ds">Version, credits, AGPL-3.0 licence</div>
+<div class="badges"><span class="badge passive">Passive</span> <span class="badge passive">Ready</span></div></div>
+<div class="act"><a class="btn btn-ghost" href="../tools/sys.about.html">Manual →</a></div></div></div>
+</div></section>
+<footer><div class="wrap"><div class="foot">
+<div><div class="brand"><svg class="mk" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="14.5" y="4" width="3" height="18" fill="#B07A1E"/><path d="M16 1.5 L18 5 L14 5 Z" fill="#B07A1E"/><rect x="9" y="20" width="14" height="2.6" fill="#B07A1E"/><circle cx="16" cy="27" r="3.2" fill="none" stroke="#2E7D74" stroke-width="2"/></svg> IceniTech</div>
+<p style="max-width:34ch;margin-top:12px;font-size:.92rem">Field tools, honest tutorials, and a community of builders. Built in Norfolk, UK.</p>
+<div class="socials"><a href="#" target="_blank" rel="noopener me" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.9-.5-5.8a3 3 0 0 0-2.1-2.1C18.5 3.5 12 3.5 12 3.5s-6.5 0-8.4.6A3 3 0 0 0 1.5 6.2C1 8.1 1 12 1 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 8.4.6 8.4.6s6.5 0 8.4-.6a3 3 0 0 0 2.1-2.1C23 15.9 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="Discord" title="Discord"><svg viewBox="0 0 24 24"><path d="M20 4.4A19 19 0 0 0 15.3 3l-.2.5a14 14 0 0 1 4 2 16 16 0 0 0-14 0 14 14 0 0 1 4-2L8.7 3A19 19 0 0 0 4 4.4 20 20 0 0 0 .5 18a19 19 0 0 0 5.8 3l.8-1.3a12 12 0 0 1-2-1l.5-.4a13 13 0 0 0 11 0l.5.4a12 12 0 0 1-2 1l.8 1.3a19 19 0 0 0 5.8-3A20 20 0 0 0 20 4.4zM8.5 14.5c-1 0-1.8-1-1.8-2.1S7.5 10.3 8.5 10.3s1.8 1 1.8 2.1-.8 2.1-1.8 2.1zm7 0c-1 0-1.8-1-1.8-2.1s.8-2.1 1.8-2.1 1.8 1 1.8 2.1-.8 2.1-1.8 2.1z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4.1.6c-.8.3-1.4.7-2 1.4-.7.6-1.1 1.2-1.4 2C.3 4.8.1 5.7.1 7 0 8.3 0 8.7 0 12s0 3.7.1 5c0 1.3.2 2.2.5 2.9.3.8.7 1.4 1.4 2 .6.7 1.2 1.1 2 1.4.7.3 1.6.5 2.9.5 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3 0 2.2-.2 2.9-.5.8-.3 1.4-.7 2-1.4.7-.6 1.1-1.2 1.4-2 .3-.7.5-1.6.5-2.9.1-1.3.1-1.7.1-5s0-3.7-.1-5c0-1.3-.2-2.2-.5-2.9-.3-.8-.7-1.4-1.4-2-.6-.7-1.2-1.1-2-1.4C19.2.3 18.3.1 17 .1 15.7 0 15.3 0 12 0zm0 5.8A6.2 6.2 0 1 0 18.2 12 6.2 6.2 0 0 0 12 5.8zm0 10.2A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.9a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24"><path d="M16.5 2h-3v13a2.5 2.5 0 1 1-2.5-2.5c.2 0 .4 0 .5.1V9.5a5.6 5.6 0 0 0-.5 0A5.5 5.5 0 1 0 16.5 15V8.3a7 7 0 0 0 4 1.3V6.5a4 4 0 0 1-4-4z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="X" title="X"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.9l-5.4-7-6.2 7H1.6l8.2-9.3L1 2h7.1l4.9 6.5L18.9 2zm-1.2 18h1.9L7.2 4H5.2l12.5 16z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7v-3.5h3.1V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9v2.2h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg></a></div></div>
+<div><h4>Software</h4><ul>
+<li><a href="../software/andraste-tablet.html">Andraste — Tablet</a></li>
+<li><a href="../software/andraste-cyd.html">Andraste — CYD</a></li>
+<li><a href="../tools/index.html">All tools</a></li></ul></div>
+<div><h4>Learn</h4><ul>
+<li><a href="../videos/index.html">Videos</a></li>
+<li><a href="../community.html">Community</a></li>
+<li><a href="../about.html">About</a></li></ul></div>
+<div><h4>Code</h4><ul>
+<li><a href="https://github.com/stevenjtobin/andraste-fire" target="_blank" rel="noopener">Source</a></li>
+<li><a href="https://github.com/stevenjtobin/andraste-ota/releases" target="_blank" rel="noopener">Downloads</a></li>
+<li><a href="https://github.com/stevenjtobin" target="_blank" rel="noopener">GitHub</a></li></ul></div>
+</div>
+<div class="fineprint"><span>© 2026 IceniTech · open source, AGPL-3.0</span><span class="mono">Made in Norfolk</span></div>
+</div></footer></body></html>

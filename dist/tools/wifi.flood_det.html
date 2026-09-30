@@ -3,67 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IceniTech — Field tools, honest tutorials, and a community of builders.</title>
-<meta name="description" content="Open-source field tools, hands-on tutorials and a community of builders across cyber security, coding, AI, crypto, 3D printing and hardware.">
+<title>Flood Detector — manual</title>
+<meta name="description" content="How to use Flood Detector: Detect high-rate 802.11 flooding on current channel.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="../assets/style.css">
 </head>
 <body><header class="nav"><div class="wrap nav-in">
-<a class="brand" href="index.html"><svg class="mk" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="14.5" y="4" width="3" height="18" fill="#B07A1E"/><path d="M16 1.5 L18 5 L14 5 Z" fill="#B07A1E"/><rect x="9" y="20" width="14" height="2.6" fill="#B07A1E"/><circle cx="16" cy="27" r="3.2" fill="none" stroke="#2E7D74" stroke-width="2"/></svg> IceniTech</a>
-<nav class="nav-links" id="navlinks"><a href="index.html" class="active">Home</a><a href="software/index.html" class="">Software</a><a href="tools/index.html" class="">Tools</a><a href="videos/index.html" class="">Videos</a><a href="about.html" class="">About</a><a href="community.html" class="">Community</a></nav>
+<a class="brand" href="../index.html"><svg class="mk" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="14.5" y="4" width="3" height="18" fill="#B07A1E"/><path d="M16 1.5 L18 5 L14 5 Z" fill="#B07A1E"/><rect x="9" y="20" width="14" height="2.6" fill="#B07A1E"/><circle cx="16" cy="27" r="3.2" fill="none" stroke="#2E7D74" stroke-width="2"/></svg> IceniTech</a>
+<nav class="nav-links" id="navlinks"><a href="../index.html" class="">Home</a><a href="../software/index.html" class="">Software</a><a href="../tools/index.html" class="">Tools</a><a href="../videos/index.html" class="">Videos</a><a href="../about.html" class="">About</a><a href="../community.html" class="">Community</a></nav>
 <div class="nav-right"><div class="socials"><a href="#" target="_blank" rel="noopener me" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.9-.5-5.8a3 3 0 0 0-2.1-2.1C18.5 3.5 12 3.5 12 3.5s-6.5 0-8.4.6A3 3 0 0 0 1.5 6.2C1 8.1 1 12 1 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 8.4.6 8.4.6s6.5 0 8.4-.6a3 3 0 0 0 2.1-2.1C23 15.9 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="Discord" title="Discord"><svg viewBox="0 0 24 24"><path d="M20 4.4A19 19 0 0 0 15.3 3l-.2.5a14 14 0 0 1 4 2 16 16 0 0 0-14 0 14 14 0 0 1 4-2L8.7 3A19 19 0 0 0 4 4.4 20 20 0 0 0 .5 18a19 19 0 0 0 5.8 3l.8-1.3a12 12 0 0 1-2-1l.5-.4a13 13 0 0 0 11 0l.5.4a12 12 0 0 1-2 1l.8 1.3a19 19 0 0 0 5.8-3A20 20 0 0 0 20 4.4zM8.5 14.5c-1 0-1.8-1-1.8-2.1S7.5 10.3 8.5 10.3s1.8 1 1.8 2.1-.8 2.1-1.8 2.1zm7 0c-1 0-1.8-1-1.8-2.1s.8-2.1 1.8-2.1 1.8 1 1.8 2.1-.8 2.1-1.8 2.1z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4.1.6c-.8.3-1.4.7-2 1.4-.7.6-1.1 1.2-1.4 2C.3 4.8.1 5.7.1 7 0 8.3 0 8.7 0 12s0 3.7.1 5c0 1.3.2 2.2.5 2.9.3.8.7 1.4 1.4 2 .6.7 1.2 1.1 2 1.4.7.3 1.6.5 2.9.5 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3 0 2.2-.2 2.9-.5.8-.3 1.4-.7 2-1.4.7-.6 1.1-1.2 1.4-2 .3-.7.5-1.6.5-2.9.1-1.3.1-1.7.1-5s0-3.7-.1-5c0-1.3-.2-2.2-.5-2.9-.3-.8-.7-1.4-1.4-2-.6-.7-1.2-1.1-2-1.4C19.2.3 18.3.1 17 .1 15.7 0 15.3 0 12 0zm0 5.8A6.2 6.2 0 1 0 18.2 12 6.2 6.2 0 0 0 12 5.8zm0 10.2A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.9a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24"><path d="M16.5 2h-3v13a2.5 2.5 0 1 1-2.5-2.5c.2 0 .4 0 .5.1V9.5a5.6 5.6 0 0 0-.5 0A5.5 5.5 0 1 0 16.5 15V8.3a7 7 0 0 0 4 1.3V6.5a4 4 0 0 1-4-4z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="X" title="X"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.9l-5.4-7-6.2 7H1.6l8.2-9.3L1 2h7.1l4.9 6.5L18.9 2zm-1.2 18h1.9L7.2 4H5.2l12.5 16z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7v-3.5h3.1V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9v2.2h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg></a></div>
 <button class="nav-toggle" onclick="document.getElementById('navlinks').classList.toggle('open')" aria-label="Menu"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
 </div></header>
-<section class="hero"><div class="wrap">
-<span class="eyebrow">Open-source tools · tutorials · community</span>
-<h1>Build, learn, and tinker&nbsp;— together.</h1>
-<p class="lede">Hi, I'm Steven. I build open-source field tools and share honest, hands-on tutorials across cyber security, coding, AI, crypto, 3D printing and hardware — and I'm gathering a community of people who like to make and understand their own kit.</p>
-<div class="hero-cta">
-<a class="btn btn-primary" href="software/index.html">Explore the software</a>
-<a class="btn btn-ghost" href="videos/index.html">Watch &amp; learn</a>
-<a class="btn btn-gold" href="community.html">Join the community</a>
-</div>
-<div style="margin-top:34px"><a class="pill" href="videos/cyber-security.html">Cyber Security</a><a class="pill" href="videos/coding.html">Coding &amp; Software</a><a class="pill" href="videos/ai.html">AI</a><a class="pill" href="videos/crypto.html">Crypto &amp; Mining</a><a class="pill" href="videos/3d-printing.html">3D Printing</a><a class="pill" href="videos/hardware.html">Hardware &amp; Cyberdecks</a></div>
+<section><div class="wrap doc" style="padding-top:40px">
+<div class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Tools</a> / Flood Detector</div>
+<h1>Flood Detector</h1>
+<p class="sub">Detect high-rate 802.11 flooding on current channel.</p>
+<div class="meta-row"><span class="badge passive">Passive</span>
+<span class="badge gold">Wi-Fi</span>
+
+
+<span class="badge ">Coming soon</span></div>
+
+<div class="callout"><strong>Safe to explore.</strong> This is a passive / read-only tool — it listens and reports, it doesn't change anything or transmit attacks.</div>
+
+<h2>What it does</h2>
+<p>This is a Wi-Fi tool. Detect high-rate 802.11 flooding on current channel.</p>
+
+<h2>How to use it</h2>
+<ol><li>Open <strong>Flood Detector</strong> from the Wi-Fi category.</li><li>Make sure Location is switched on (Android needs it for Wi-Fi scanning).</li><li>Tap scan/refresh — nearby networks appear with signal, channel and security.</li><li>Tap an entry (where supported) for more detail.</li></ol>
+
+<h2>What happens on your hardware</h2>
+<p><strong>On the Andraste Tablet:</strong> Uses the tablet's built-in 2.4 GHz Wi-Fi. Passive scanning works out of the box (with Location switched on).</p>
+<p><strong>On the Andraste CYD (ESP32):</strong> The ESP32's Wi-Fi radio can do more low-level Wi-Fi work than a stock tablet, so several of these have strong CYD equivalents.</p>
+
+<h2>At a glance</h2>
+<table class="kv">
+<tr><td>Category</td><td>Wi-Fi</td></tr>
+<tr><td>Risk level</td><td>Passive</td></tr>
+<tr><td>Needs</td><td>Fine Location, Wifi</td></tr>
+<tr><td>Extra hardware</td><td>None</td></tr>
+<tr><td>Root required</td><td>No</td></tr>
+<tr><td>Status</td><td>Coming soon</td></tr>
+</table>
+<p style="margin-top:26px"><a class="btn btn-ghost" href="../software/andraste-tablet.html">← Back to the tablet guide</a></p>
 </div></section>
-
-<section class="soft"><div class="wrap">
-<div class="section-head"><span class="eyebrow">What you'll find here</span><h2>Made to be used, and understood.</h2>
-<p>Everything is open, documented for beginners, and yours to learn from.</p></div>
-<div class="grid g3">
-<a class="card" href="software/index.html"><div class="ico">🛠️</div><h3>Software</h3><p>Free, open-source field toolkits for tablets and microcontrollers — with a full guide and a manual for every single tool.</p></a>
-<a class="card" href="videos/index.html"><div class="ico">🎥</div><h3>Videos &amp; guides</h3><p>Step-by-step builds and explainers, sorted into clear topics so you can follow the thread you care about.</p></a>
-<a class="card" href="community.html"><div class="ico">🤝</div><h3>Community</h3><p>A friendly place for builders, tinkerers and the security-curious. Come say hello, share what you're making.</p></a>
-</div></div></section>
-
-<section class="band"><div class="wrap">
-<div class="section-head"><span class="eyebrow">Featured software</span><h2>Andraste — a field toolkit in your pocket.</h2>
-<p>A native app that turns an ordinary tablet into a 130-tool field kit — 84 tools working today across Wi-Fi, Bluetooth, network, location, camera and more. Free, open source, and it updates itself over the air.</p></div>
-<div class="hero-cta">
-<a class="btn btn-gold" href="software/andraste-tablet.html">Read the guide</a>
-<a class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.25)" href="https://github.com/stevenjtobin/andraste-ota/releases/latest" target="_blank" rel="noopener">Download</a>
-</div></div></section>
-
-<section><div class="wrap"><div class="join">
-<span class="eyebrow" style="color:var(--gold)">Come build with us</span>
-<h2>Join a community of makers.</h2>
-<p>New videos, project files, early builds and a place to ask questions. Follow along wherever you like — and jump into the chat.</p>
-<div class="socials"><a href="#" target="_blank" rel="noopener me" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.9-.5-5.8a3 3 0 0 0-2.1-2.1C18.5 3.5 12 3.5 12 3.5s-6.5 0-8.4.6A3 3 0 0 0 1.5 6.2C1 8.1 1 12 1 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 8.4.6 8.4.6s6.5 0 8.4-.6a3 3 0 0 0 2.1-2.1C23 15.9 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="Discord" title="Discord"><svg viewBox="0 0 24 24"><path d="M20 4.4A19 19 0 0 0 15.3 3l-.2.5a14 14 0 0 1 4 2 16 16 0 0 0-14 0 14 14 0 0 1 4-2L8.7 3A19 19 0 0 0 4 4.4 20 20 0 0 0 .5 18a19 19 0 0 0 5.8 3l.8-1.3a12 12 0 0 1-2-1l.5-.4a13 13 0 0 0 11 0l.5.4a12 12 0 0 1-2 1l.8 1.3a19 19 0 0 0 5.8-3A20 20 0 0 0 20 4.4zM8.5 14.5c-1 0-1.8-1-1.8-2.1S7.5 10.3 8.5 10.3s1.8 1 1.8 2.1-.8 2.1-1.8 2.1zm7 0c-1 0-1.8-1-1.8-2.1s.8-2.1 1.8-2.1 1.8 1 1.8 2.1-.8 2.1-1.8 2.1z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4.1.6c-.8.3-1.4.7-2 1.4-.7.6-1.1 1.2-1.4 2C.3 4.8.1 5.7.1 7 0 8.3 0 8.7 0 12s0 3.7.1 5c0 1.3.2 2.2.5 2.9.3.8.7 1.4 1.4 2 .6.7 1.2 1.1 2 1.4.7.3 1.6.5 2.9.5 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3 0 2.2-.2 2.9-.5.8-.3 1.4-.7 2-1.4.7-.6 1.1-1.2 1.4-2 .3-.7.5-1.6.5-2.9.1-1.3.1-1.7.1-5s0-3.7-.1-5c0-1.3-.2-2.2-.5-2.9-.3-.8-.7-1.4-1.4-2-.6-.7-1.2-1.1-2-1.4C19.2.3 18.3.1 17 .1 15.7 0 15.3 0 12 0zm0 5.8A6.2 6.2 0 1 0 18.2 12 6.2 6.2 0 0 0 12 5.8zm0 10.2A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.9a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24"><path d="M16.5 2h-3v13a2.5 2.5 0 1 1-2.5-2.5c.2 0 .4 0 .5.1V9.5a5.6 5.6 0 0 0-.5 0A5.5 5.5 0 1 0 16.5 15V8.3a7 7 0 0 0 4 1.3V6.5a4 4 0 0 1-4-4z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="X" title="X"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.9l-5.4-7-6.2 7H1.6l8.2-9.3L1 2h7.1l4.9 6.5L18.9 2zm-1.2 18h1.9L7.2 4H5.2l12.5 16z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7v-3.5h3.1V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9v2.2h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg></a></div>
-<div class="hero-cta" style="justify-content:center;margin-top:24px"><a class="btn btn-gold" href="community.html">See how to join</a></div>
-</div></div></section>
 <footer><div class="wrap"><div class="foot">
 <div><div class="brand"><svg class="mk" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="14.5" y="4" width="3" height="18" fill="#B07A1E"/><path d="M16 1.5 L18 5 L14 5 Z" fill="#B07A1E"/><rect x="9" y="20" width="14" height="2.6" fill="#B07A1E"/><circle cx="16" cy="27" r="3.2" fill="none" stroke="#2E7D74" stroke-width="2"/></svg> IceniTech</div>
 <p style="max-width:34ch;margin-top:12px;font-size:.92rem">Field tools, honest tutorials, and a community of builders. Built in Norfolk, UK.</p>
 <div class="socials"><a href="#" target="_blank" rel="noopener me" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.9-.5-5.8a3 3 0 0 0-2.1-2.1C18.5 3.5 12 3.5 12 3.5s-6.5 0-8.4.6A3 3 0 0 0 1.5 6.2C1 8.1 1 12 1 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 8.4.6 8.4.6s6.5 0 8.4-.6a3 3 0 0 0 2.1-2.1C23 15.9 23 12 23 12zM10 15.5v-7l6 3.5-6 3.5z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="Discord" title="Discord"><svg viewBox="0 0 24 24"><path d="M20 4.4A19 19 0 0 0 15.3 3l-.2.5a14 14 0 0 1 4 2 16 16 0 0 0-14 0 14 14 0 0 1 4-2L8.7 3A19 19 0 0 0 4 4.4 20 20 0 0 0 .5 18a19 19 0 0 0 5.8 3l.8-1.3a12 12 0 0 1-2-1l.5-.4a13 13 0 0 0 11 0l.5.4a12 12 0 0 1-2 1l.8 1.3a19 19 0 0 0 5.8-3A20 20 0 0 0 20 4.4zM8.5 14.5c-1 0-1.8-1-1.8-2.1S7.5 10.3 8.5 10.3s1.8 1 1.8 2.1-.8 2.1-1.8 2.1zm7 0c-1 0-1.8-1-1.8-2.1s.8-2.1 1.8-2.1 1.8 1 1.8 2.1-.8 2.1-1.8 2.1z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4.1.6c-.8.3-1.4.7-2 1.4-.7.6-1.1 1.2-1.4 2C.3 4.8.1 5.7.1 7 0 8.3 0 8.7 0 12s0 3.7.1 5c0 1.3.2 2.2.5 2.9.3.8.7 1.4 1.4 2 .6.7 1.2 1.1 2 1.4.7.3 1.6.5 2.9.5 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3 0 2.2-.2 2.9-.5.8-.3 1.4-.7 2-1.4.7-.6 1.1-1.2 1.4-2 .3-.7.5-1.6.5-2.9.1-1.3.1-1.7.1-5s0-3.7-.1-5c0-1.3-.2-2.2-.5-2.9-.3-.8-.7-1.4-1.4-2-.6-.7-1.2-1.1-2-1.4C19.2.3 18.3.1 17 .1 15.7 0 15.3 0 12 0zm0 5.8A6.2 6.2 0 1 0 18.2 12 6.2 6.2 0 0 0 12 5.8zm0 10.2A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-10.9a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24"><path d="M16.5 2h-3v13a2.5 2.5 0 1 1-2.5-2.5c.2 0 .4 0 .5.1V9.5a5.6 5.6 0 0 0-.5 0A5.5 5.5 0 1 0 16.5 15V8.3a7 7 0 0 0 4 1.3V6.5a4 4 0 0 1-4-4z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="X" title="X"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.9l-5.4-7-6.2 7H1.6l8.2-9.3L1 2h7.1l4.9 6.5L18.9 2zm-1.2 18h1.9L7.2 4H5.2l12.5 16z"/></svg></a><a href="#" target="_blank" rel="noopener me" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7v-3.5h3.1V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9v2.2h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg></a></div></div>
 <div><h4>Software</h4><ul>
-<li><a href="software/andraste-tablet.html">Andraste — Tablet</a></li>
-<li><a href="software/andraste-cyd.html">Andraste — CYD</a></li>
-<li><a href="tools/index.html">All tools</a></li></ul></div>
+<li><a href="../software/andraste-tablet.html">Andraste — Tablet</a></li>
+<li><a href="../software/andraste-cyd.html">Andraste — CYD</a></li>
+<li><a href="../tools/index.html">All tools</a></li></ul></div>
 <div><h4>Learn</h4><ul>
-<li><a href="videos/index.html">Videos</a></li>
-<li><a href="community.html">Community</a></li>
-<li><a href="about.html">About</a></li></ul></div>
+<li><a href="../videos/index.html">Videos</a></li>
+<li><a href="../community.html">Community</a></li>
+<li><a href="../about.html">About</a></li></ul></div>
 <div><h4>Code</h4><ul>
 <li><a href="https://github.com/stevenjtobin/andraste-fire" target="_blank" rel="noopener">Source</a></li>
 <li><a href="https://github.com/stevenjtobin/andraste-ota/releases" target="_blank" rel="noopener">Downloads</a></li>
